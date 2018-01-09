@@ -91,6 +91,7 @@ cc_library_shared {
     },
 
      product_variables: {
+        custom: {
         qcom_bsp_legacy: {
             cflags: ["-DQCOM_BSP_LEGACY"],
         },
@@ -100,7 +101,8 @@ cc_library_shared {
         has_legacy_camera_hal1: {
             cflags: ["-DHAS_LEGACY_CAMERA_HAL1"],
         },
-    },
+      }, 
+   },
 }
 
 cc_library_shared {
