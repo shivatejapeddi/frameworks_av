@@ -254,6 +254,9 @@ public:
     virtual status_t registerSoundTriggerCaptureStateListener(
         const sp<media::ICaptureStateListener>& listener,
         bool* result) = 0;
+
+    virtual status_t listAudioSessions(audio_stream_type_t streams,
+                                       Vector< sp<AudioSessionInfo>> &sessions) = 0;
 };
 
 
@@ -266,10 +269,6 @@ public:
                                     const Parcel& data,
                                     Parcel* reply,
                                     uint32_t flags = 0);
-private:
-    void sanetizeAudioAttributes(audio_attributes_t* attr);
-    status_t sanitizeEffectDescriptor(effect_descriptor_t* desc);
-    status_t sanitizeAudioPortConfig(struct audio_port_config* config);
 };
 
 // ----------------------------------------------------------------------------
